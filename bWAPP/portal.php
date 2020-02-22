@@ -20,7 +20,7 @@ include("security.php");
 include("security_level_check.php");
 include("selections.php");
 
-  if(isset($_POST["form_bug"]) && isset($_POST["bug"]))
+  if(isset($_POST["form"]) && isset($_POST["bug"]))
   {
 
     $key = $_POST["bug"];
@@ -113,12 +113,7 @@ include("selections.php");
                // echo "key: " . $key;
                // echo " value: " . $bug[0];
                // echo " filename: " . $bug[1] . "<br />";
-              $selected = (mb_stristr($bug[1], basename($_SERVER["SCRIPT_NAME"]))!==false)? ' selected="selected"':'';
-
-
-              echo "
-            <option title='$bug[1]' value='$key' $selected>$bug[0]</option>";
-
+               echo "<option value='$key'>$bug[0]</option>";
             }
 
             ?>
